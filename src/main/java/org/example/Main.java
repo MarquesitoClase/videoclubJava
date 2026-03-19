@@ -10,10 +10,9 @@ import org.example.view.MovieView;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
         MovieRepositoryImp movieRepository = new MovieRepositoryImp();
         MovieController movieController = new MovieController((movieRepository));
-
         MovieView movieView = new MovieView(movieController);
+        movieView.createMovieView();
     }
 }

@@ -3,20 +3,21 @@ package org.example.model;
 import java.util.ArrayList;
 
 public class Movie {
-    String title;
-    int year;
-    String director;
-    ArrayList<String>  actors;
-    double filmAffinittyScore;
-    String filmDescription;
-    String imgUrl;
+    private Long id;
+    private String title;
+    private int year;
+    private String director;
+    private ArrayList<String>  actors;
+    private double filmAffinityScore;
+    private String filmDescription;
+    private String imgUrl;
 
-    public Movie(String title, int year, String director, ArrayList<String> actors, double filmAffinittyScore, String filmDescription, String imgUrl, String url) {
+    public Movie(String title, int year, String director, ArrayList<String> actors, double filmAffinityScore, String filmDescription, String imgUrl, String url) {
         this.title = title;
         this.year = year;
         this.director = director;
         this.actors = actors;
-        this.filmAffinittyScore = filmAffinittyScore;
+        this.filmAffinityScore = filmAffinityScore;
         this.filmDescription = filmDescription;
         this.imgUrl = imgUrl;
         Url = url;
@@ -57,11 +58,11 @@ public class Movie {
     }
 
     public double getFilmAffinittyScore() {
-        return filmAffinittyScore;
+        return filmAffinityScore;
     }
 
     public void setFilmAffinittyScore(int filmAffinittyScore) {
-        this.filmAffinittyScore = filmAffinittyScore;
+        this.filmAffinityScore = filmAffinittyScore;
     }
 
     public String getFilmDescription() {

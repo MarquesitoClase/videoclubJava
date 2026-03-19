@@ -3,48 +3,55 @@ package org.example.view;
 import org.example.controller.MovieController;
 import org.example.model.Movie;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class MovieView {
-    Scanner scanner;
     private MovieController movieController;
+    Scanner scanner=new Scanner(System.in);
     public MovieView(MovieController movieController){
         this.movieController = movieController;
     }
 
+    public void createMovieView(){
+        Movie movie = generateMovie();
+        movieController.createMovieController((movie));
+    }
     public Movie generateMovie(){
-        String[] directoresArray = new String[0];
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Escriba el título de la película a añadir.");
+        scanner = new Scanner(System.in);
+
+        System.out.println("Escriba el titulo de la película.");
         String title = scanner.nextLine();
-        System.out.println("Escriba el año.");
+
+        System.out.println("Escriba el año de la película.");
         int anio = Integer.parseInt(scanner.nextLine());
-            System.out.println("Escriba el director de la pelicula.");
-            String director = scanner.nextLine();
-            String cont="yes";
-        ArrayList<String> actors = new ArrayList<>();
-        while(!cont.equals("no")){
-            System.out.println("Escribame el nombre de uno de sus actoresa/actrices.");
-            actors.add(scanner.nextLine());
-            System.out.println("Hay más actores?No para parar de introducirlos.");
+
+        System.out.println("Escriba su director.");
+        String director = scanner.nextLine();
+
+        System.out.println("Escriba sus actores, separados por ','");
+        ArrayList<String> actores = new ArrayList();
+        String actoresString = scanner.nextLine();
+
+        ArrayList<String> actoresArray = new ArrayList<>();
+        for (String actor : actoresString.split(",")) {
+            actoresArray.add(actor.trim());
         }
 
-        System.out.println("Que puntaje tiene en filmAffinity? Psarte decimal con .");
-        double filmScoree = (Double.parseDouble(scanner.nextLine()));
 
-        System.out.println("De que va la película?.");
-        String filmDescription = scanner.nextLine();
+        //double filmAffinittyScore, String filmDescription, String imgUrl, String url
+        System.out.println("Que nota tiene en filmAffinitty? Decimales con .");
+        double nota = Double.parseDouble(scanner.nextLine());
 
-        System.out.println("Donde podemos encontrar su caratula?");
-        String url = scanner.nextLine();
+        System.out.println("De que vsa la peliculas segun filmAffinity?");
+        String fAD = scanner.nextLine();
 
-        System.out.println("Y, por último, donde se encuentra la web a esta película?");
-        String description = scanner.nextLine();
-        
-        //public Movie(String title, int year, String director, String[] actors, int filmAffinittyScore, 
-        //String filmDescription, String imgUrl, String url) {
-        Movie ret = new Movie(title, anio, director,actors, filmScoree, filmDescription, url, description);
+        System.out.println("Cual es la ruta a su imagen de portada?");
+        String poster = scanner.nextLine();
+
+        System.out.println("Donde se encuentra su pagina web?");
+        String web = scanner.nextLine();
+        return new Movie(title, anio, director, actores, nota,fAD, poster, web);
     }
 }
