@@ -13,4 +13,8 @@ public class MovieController {
     public void createMovieController(Movie movie){
         movieRepository.createMovie(movie);
     }
+
+    public void guardarPelicula(Movie movie){
+        this.movieRepository.createMovie(movie);
+    }
 }

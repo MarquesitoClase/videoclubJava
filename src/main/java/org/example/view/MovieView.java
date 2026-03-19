@@ -52,6 +52,8 @@ public class MovieView {
 
         System.out.println("Donde se encuentra su pagina web?");
         String web = scanner.nextLine();
+
+
         return new Movie(title, anio, director, actores, nota,fAD, poster, web);
     }
 }
