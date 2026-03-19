@@ -16,17 +16,17 @@ src
 | |  
 | |  
 | |-config  
-| ||-DBManager.java(The class that allow use the external DB)  
+| |  |-DBManager.java(The class that allow use the external DB)  
 | |  
 | |-controller  
-| ||-MovieController.java(who is the intermediary between the parts of the app)  
+| |  |-MovieController.java(who is the intermediary between the parts of the app)  
 | |  
 | |-model  
-| ||-Movie.java(The entity of the app)  
+| |  |-Movie.java(The entity of the app)  
 | |  
 | |-RepositoryImp.java(the class who pass the data to a DDBB)  
 | |  
 | |-View  
-| ||-MovieView.java(the one who ask the data in console to the user of the app)  
+| |  |-MovieView.java(the one who ask the data in console to the user of the app)  
 | |  
 |-main.java(the class that allow you run the app)  
