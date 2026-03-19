@@ -10,23 +10,23 @@ but with java vanilla this time.
 
 # structure of proyect:
 
-src
-|
-|-org.example
-| |
-| |
-| |-config
-| ||-DBManager.java(The class that allow use the external DB)
-| |
-| |-controller
-| ||-MovieController.java(who is the intermediary between the parts of the app)
-| |
-| |-model
-| ||-Movie.java(The entitiy of the app)
-| |
-| |-RepositoryImp.java(the class who pass the data to a DDBB)
-| |
-| |-View
-| ||-MovieView.java(the one who azsk the data in console to the user of the app)
-| |
-| ||-main.java(the class that allow you run the app)
+src  
+|  
+|-org.example  
+| |  
+| |  
+| |-config  
+| ||-DBManager.java(The class that allow use the external DB)  
+| |  
+| |-controller  
+| ||-MovieController.java(who is the intermediary between the parts of the app)  
+| |  
+| |-model  
+| ||-Movie.java(The entitiy of the app)  
+| |  
+| |-RepositoryImp.java(the class who pass the data to a DDBB)  
+| |  
+| |-View  
+| ||-MovieView.java(the one who azsk the data in console to the user of the app)  
+| |  
+|-main.java(the class that allow you run the app)  
