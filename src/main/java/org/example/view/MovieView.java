@@ -54,6 +54,6 @@ public class MovieView {
         String web = scanner.nextLine();
 
 
-        return new Movie(title, anio, director, actores, nota,fAD, poster, web);
+        return new Movie(title, anio, director, actoresArray, nota,fAD, poster, web);
     }
 }

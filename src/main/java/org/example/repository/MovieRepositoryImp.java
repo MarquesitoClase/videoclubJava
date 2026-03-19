@@ -17,12 +17,15 @@ public class MovieRepositoryImp {
 
     public void createMovie(Movie movie){
         String querySQLCreate =
-                "SELECT * from films";
+                "INSERT INTO films(title, year, director, actors, filmAffinittyScore, imgUrl, url, ranking) " +
+                        "VALUES ('" + movie.getTitle() + "','"+ movie.getYear() + "','"+ movie.getDirector() + "','"
+                        + movie.getActors() + "','"+ movie.getFilmAffinittyScore() +
+                        "','"+ movie.getImgUrl() + "','"+ movie.getUrl() + "','" + 25 + "')";
             try{
                 connection = DBManager.innitConnection(); // conectar a la bbdd
                 Statement statement = connection.createStatement(); // preparar la sentencia - Query
-                System.out.println(statement.executeQuery(querySQLCreate)); // ejecutar la sentencia
-                System.out.println("Pelicula Creado en la BBDD");
+                statement.executeUpdate(querySQLCreate); // ejecutar la sentencia
+                System.out.println("Pelicula creada en la BBDD");
 
             } catch (Exception exception) {
                 System.out.println(exception.getMessage());
