@@ -17,15 +17,15 @@ public class MovieRepositoryImp {
 
     public void createMovie(Movie movie){
         String querySQLCreate =
-                "INSERT INTO films(title, year, director, actors, filmAffinittyScore, filmDescription, imgUrl, url) " +
+                "INSERT INTO films(title, year, director, actors, filmAffinittyScore, filmDescription, imgUrl, url, ranking) " +
                         "VALUES ('" + movie.getTitle() + "','"+ movie.getYear() + "','"+ movie.getDirector() + "','"
                         + movie.getActors() + "','"+ movie.getFilmAffinittyScore() + "','"+ movie.getFilmDescription() +
-                        "','"+ movie.getImgUrl() + "','"+ movie.getUrl() + "')";
+                        "','"+ movie.getImgUrl() + "','"+ movie.getUrl() +"')";
             try{
                 connection = DBManager.innitConnection(); // conectar a la bbdd
                 Statement statement = connection.createStatement(); // preparar la sentencia - Query
                 statement.executeUpdate(querySQLCreate); // ejecutar la sentencia
-                System.out.println("Evento Creado");
+                System.out.println("Evento Creado en la BBDD");
 
             } catch (Exception exception) {
                 System.out.println(exception.getMessage());
@@ -34,22 +34,4 @@ public class MovieRepositoryImp {
                 DBManager.closeConnection();
             }
         }
-
-//        public ArrayList<Movie> findAll() throws SQLException {
-//            ArrayList<Movie> movies = new ArrayList<>();
-//            String Query = "select * from movies";
-//
-//            try{
-//                String QuerySQLFindAll = "select * from movies";
-//                connection = DBManager.innitConnection(); // conectar a la bbdd
-//                Statement statement = connection.createStatement(); // preparar la sentencia - Query
-//                statement.executeUpdate(QuerySQLFindAll);
-//            }catch(Exception exception){
-//                System.out.println(exception.getMessage());
-//
-//            } finally {
-//                DBManager.closeConnection();
-//            }
-//            return
-//        }
     }
